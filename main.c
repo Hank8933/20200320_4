@@ -18,7 +18,11 @@ int main()
 {
     //char a[3][4]={"x 0","xx0"," 0 "};
     char a[3][4]={0};
-    for (int i = 0; i<12; i++) scanf("%c",(*a+i));
+    for (int i = 0; i<12; i++)
+    {
+        if ((i+1)%4 == 0) fflush(stdin);
+        else scanf("%c",*a+i);
+    }
     printf("%s!\n",(check(*a, 0)?"Yes":"No"));
     return 0;
 }
